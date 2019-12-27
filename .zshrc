@@ -3,7 +3,7 @@
 ZSHRC="$HOME/"bin/zshrc
 source $ZSHRC
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source "${HOME}/.iterm2_shell_integration.zsh"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
