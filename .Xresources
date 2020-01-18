@@ -60,7 +60,7 @@ URxvt.transparent:  true
 URxvt*highlightSelection: true
 URxvt*background: [40]#232C31
 URxvt*geometry: 100x30
-!URxvt*shading: 50
+URxvt*shading: 50
 URxvt*tintColor: #666666
 URxvt*blurRadius: 5
 
