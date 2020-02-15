@@ -20,8 +20,8 @@
             "rootPatterns": [".flowconfig"]
         }
     },
-    "java.home": "/Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home",
-    "coc.preferences.formatOnType": true, 
+    "java.home": "/Library/Java/JavaVirtualMachines/openjdk-13.0.0.jdk/Contents/Home",
+    "coc.preferences.formatOnType": true,
     "coc.preferences.formatOnSaveFiletypes": ["javascript", "js", "html", "Markdown", "css", "scala"],
     "eslint.enable":true,
     "eslint.run":"onType",
@@ -45,5 +45,6 @@
       "tpope",
       "typeorm",
       "varchar"
-    ],
+    ]
+
 }
