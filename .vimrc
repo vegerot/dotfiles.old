@@ -8,14 +8,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-obsession'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-abolish'
-  Plug 'tpope/vim-dispatch' 
-  Plug 'tpope/vim-commentary' 
-   
-  Plug 'benmills/vimux' 
+  Plug 'tpope/vim-dispatch'
+  Plug 'tpope/vim-commentary'
 
-  Plug 'bkad/CamelCaseMotion' 
-  Plug 'easymotion/vim-easymotion' 
-   
+  Plug 'benmills/vimux'
+
+  Plug 'bkad/CamelCaseMotion'
+  Plug 'easymotion/vim-easymotion'
+
   Plug 'kana/vim-textobj-user'
   Plug 'fvictorio/vim-textobj-backticks'
 
@@ -26,19 +26,19 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  
+
   Plug 'edkolev/tmuxline.vim'
   Plug 'tmux-plugins/vim-tmux'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'tmux-plugins/vim-tmux-focus-events'
-   
-  Plug 'janko/vim-test' 
-  
+
+  Plug 'janko/vim-test'
+
   " Vim HardTime
   "Plug 'phux/vim-hardtime'
       autocmd! User vim-hardtime.vim HT()
-  
-  Plug '/usr/local/opt/fzf' 
+
+  Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'
 
   Plug 'scrooloose/nerdtree'
@@ -47,7 +47,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
 
   Plug 'airblade/vim-gitgutter'
-  
+
   "Plug 'ycm-core/YouCompleteMe'
       autocmd! User youcompleteme.vim YCM()
   Plug 'neoclide/coc.nvim',  {'tag': '*', 'branch': 'release'}
@@ -57,32 +57,32 @@ call plug#begin('~/.vim/plugged')
   Plug 'derekwyatt/vim-scala', {'for': ['scala','sbt', 'java']}
   Plug 'mpollmeier/vim-scalaConceal', {'for': ['scala','sbt', 'java']}
 
-  
+
   Plug 'keith/swift.vim'
   Plug 'darfink/vim-plist'
 
   Plug 'arnoudbuzing/wolfram-vim'
-  
+
   "Plug 'justinmk/vim-syntax-extra'
   Plug 'sheerun/vim-polyglot'
-   
+
   Plug 'hotoo/jsgf.vim'
   "Plug 'Quramy/vim-js-pretty-template'
   "Plug 'leafoftree/vim-vue-plugin'
   Plug 'posva/vim-vue'
-  Plug 'neoclide/jsonc.vim' 
+  Plug 'neoclide/jsonc.vim'
   "Plug 'maxmellon/vim-jsx-pretty'
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'jonsmithers/vim-html-template-literals'
   "Plug 'pangloss/vim-javascript'
 
-  
+
   Plug 'nvie/vim-flake8'
   Plug 'Vimjas/vim-python-pep8-indent'
   "Plug 'jupyter-vim/jupyter-vim', {'for': ['python'] }
   Plug 'vim-python/python-syntax'
   Plug 'ehamberg/vim-cute-python'
-  
+
   Plug 'google/vim-maktaba'
   Plug 'google/vim-codefmt'
   Plug 'google/vim-glaive'
@@ -93,7 +93,7 @@ call glaive#Install()
 Glaive codefmt plugin[mappings]
 
 "NeoVim api stuff
-let g:python_host_prog="/usr/local/bin/python"
+let g:python_host_prog="/usr/local/bin/python3"
 let g:python3_host_prog="/usr/local/bin/python3"
 
 "Netrw stuff
@@ -109,7 +109,7 @@ set incsearch
 set hlsearch
 nnoremap n nzz
 nnoremap N Nzz
-vnoremap p pgvy 
+vnoremap p pgvy
 
 "Tab stuff
 set tabstop=2
@@ -117,7 +117,7 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set colorcolumn=80
- 
+
 let g:camelcasemotion_key = '<leader>'
 
 "Number stuff
@@ -140,15 +140,15 @@ nnoremap O O   <BS><Esc>:let @6=@*<CR><DEL>:let @*=@6<CR>
 nnoremap gF :wincmd f <CR>
 
 nmap <c-k> :execute &keywordprg expand("<cword>")<cr>
-  
+
  " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
-let test#strategy = "vimux" 
- 
+let test#strategy = "vimux"
+
 
 set scrolloff=1
 set showbreak=↪
@@ -156,8 +156,6 @@ set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
 set foldmethod=indent
 set foldlevelstart=18
-
-set conceallevel=1
 "Cursor Mode stuff
 
 let &t_SI.="\e[5 q" "SI = INSERT mode
@@ -192,10 +190,7 @@ let g:gruvbox_italicize_strings=1
 "let g:gruvbox_improved_strings=1
 colorscheme gruvbox
 highlight NonText guifg=gray
-"highlight Normal ctermfg=145 ctermbg=235 guifg=#ABB2BF guibg=#282838
-"highlight Normal ctermfg=7 ctermbg=0  guibg=7 guifg=0
-"guibg=black guifg=white
-"
+"highlight Normal ctermfg=7 ctermbg=0 guibg=black guifg=white
 
 "WINDOW CONFIG
 set laststatus=2
@@ -223,7 +218,7 @@ function! Lineair()
     call airline#add_inactive_statusline_func('WindowNumber')
     let g:airline#extensions#branch#format = 2
     let g:airline_powerline_fonts = 1
-    let g:airline_theme='random'
+    let g:airline_theme='powerlineish'
     silent! call airline#extensions#whitespace#disable()
     "let g:tmuxline_preset = {'z'    : '#track'}
     let g:airline#extensions#tmuxline#enabled = 1
@@ -262,6 +257,8 @@ function HT()
     "make things difficult
     let g:hardtime_default_on = 1
     let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+    let g:list_of_normal_keys = ["h", "l", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+
     let g:hardtime_showmsg = 1
     let g:hardtime_allow_different_key = 1
     let g:hardtime_maxcount = 2
@@ -331,7 +328,7 @@ let g:NERDTreeWinSize=38
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
-let g:NERDTreeHighlightCursorline = 0 
+let g:NERDTreeHighlightCursorline = 0
 function MyNerdToggle()
   if &filetype == 'nerdtree'
     :NERDTreeToggle
@@ -343,11 +340,11 @@ map <C-n> :call MyNerdToggle()<CR>
 
 
 source ~/.vimFunctions.vim
- 
+
 
 set title
 set clipboard=unnamed,unnamedplus
 set timeoutlen=1000 ttimeoutlen=1
 if exists('neovim_dot_app')
   :source ~/.gvimrc
-endif 
+endif
