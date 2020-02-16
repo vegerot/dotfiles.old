@@ -105,6 +105,10 @@ if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
 else
     export PATH="/usr/local/anaconda3/bin:$PATH"
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/matt/.sdkman"
+[[ -s "/Users/matt/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/matt/.sdkman/bin/sdkman-init.sh"
 #fi
 #unset __conda_setup
 # <<< conda initialize <<<

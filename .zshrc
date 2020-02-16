@@ -1,5 +1,5 @@
 start=`gdate +%s.%N`
-zmodload zsh/zprof
+#
 ## If you come from bash you might have to change your $PATH.
 ##Open Tmux
 source ~/.profile
@@ -17,15 +17,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 #
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh-completions/conda-zsh-completion $fpath)
-setopt LOCAL_OPTIONS NO_NOTIFY 
+#setopt LOCAL_OPTIONS NO_NOTIFY
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-autoload -U promptinit && promptinit       
-autoload -Uz run-help                      
-autoload -Uz run-help-git                  
-autoload -Uz run-help-svn                  
-autoload -Uz run-help-svk                  
-wait
+autoload -U promptinit && promptinit
+autoload -Uz run-help
+autoload -Uz run-help-git
+autoload -Uz run-help-svn
+autoload -Uz run-help-svk
 unalias run-help
 alias help=run-help
 #
@@ -43,15 +42,20 @@ plugins=(
   pip
   python
   brew
-  vi-mode  
+  vi-mode
   zsh-syntax-highlighting
   history-substring-search
   docker
   docker-compose
   docker-machine
   fzf
+<<<<<<< HEAD
   npm
 ) 
+=======
+  zsh-better-npm-completion
+)
+>>>>>>> 86fee12842f852db7c654b8686f30cb4bd543863
 source $ZSH/oh-my-zsh.sh
 setopt vi
 autoload -U edit-command-line
@@ -78,7 +82,7 @@ if [[ $'\e\x5b3D' == "$(echoti cub 3)" ]] &&
 fi
 zstyle ':completion:*:*(directories|files)*' list-colors ''
 
-export export HISTSIZE=1073741823
+export HISTSIZE=1073741823
 export SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY
 #
@@ -114,7 +118,10 @@ RPS1="${return_code}"
 
 source ~/.iterm2_shell_integration.zsh
 #
-#eval "$(jenv init -)"
+eval "$(jenv init -)"
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 #
 ## >>> conda initialize >>>
         . "/usr/local/anaconda3/etc/profile.d/conda.sh"
