@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
 
   "Plug 'Raimondi/delimitMate'
 
-  Plug 'joshdick/onedark.vim'
+  "Plug 'joshdick/onedark.vim'
   Plug 'morhetz/gruvbox'
 
   Plug 'vim-airline/vim-airline'
@@ -47,6 +47,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
 
   Plug 'airblade/vim-gitgutter'
+   
+  Plug 'luochen1990/rainbow' 
 
   "Plug 'ycm-core/YouCompleteMe'
       autocmd! User youcompleteme.vim YCM()
@@ -73,7 +75,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/jsonc.vim'
   "Plug 'maxmellon/vim-jsx-pretty'
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'jonsmithers/vim-html-template-literals'
+  "Plug 'jonsmithers/vim-html-template-literals'
   "Plug 'pangloss/vim-javascript'
 
 
@@ -177,7 +179,7 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 cmap w!! w !sudo tee > /dev/null %
 
 
-set updatetime=400
+set updatetime=100
 "Color config
 "let g:gruvbox_contrast_dark = 'hard'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -296,6 +298,8 @@ let g:vim_jsx_pretty_template_tags=['html', 'jsx', 'js', 'javascript']
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
+ 
+let g:rainbow_active = 1
 
 autocmd FileType text set spell
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -317,6 +321,7 @@ au BufRead,BufNewFile bash-fc-* set filetype=sh
 au BufRead,BufNewFile zsh* set filetype=zsh
 au BufRead,BufNewFile README,INSTALL,CREDITS set filetype=markdown
 au BufRead,BufRead * if &syntax == '' | set syntax=sh | endif
+au BufRead,BufNewFile *.json set syntax=jsonc 
 
 "Formatting end
 
