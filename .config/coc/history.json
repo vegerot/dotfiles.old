@@ -1,1 +1,9 @@
-{}
+{
+  "marketplace": {
+    "%2Fhome%2Fpi%2F": {
+      "config": [
+        "spell"
+      ]
+    }
+  }
+}

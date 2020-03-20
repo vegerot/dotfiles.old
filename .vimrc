@@ -209,7 +209,7 @@ augroup autoformat_settings
   autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 
-autocmd FileType text set spell
+"autocmd FileType text set spell
 
 
 "   PEP 8 indentation standards

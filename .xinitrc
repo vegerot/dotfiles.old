@@ -38,7 +38,6 @@ doDWM()
     exec dwm
 }
 
-xrandr --output HDMI-1 --mode 1920x1080
 xmodmap ~/.Xmodmap
 xcape
 setxkbmap -option ctrl:nocaps
@@ -47,5 +46,5 @@ autocutsel -selection CLIPBOARD -fork
 autocutsel -selection PRIMARY -fork
 xrdb -merge ~/.Xresources
 #doDWM 
-exec i3
+#exec i3
 . /etc/X11/xinit/xinitrc

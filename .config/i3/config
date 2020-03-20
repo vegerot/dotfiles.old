@@ -190,4 +190,6 @@ smart_borders on
 # Make keyboard faster
 exec --no-startup-id xset r rate 168 35
 
+
 #exec_always compton -b 
+exec killall pcmanfm
