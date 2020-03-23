@@ -107,8 +107,8 @@ else
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/matt/.sdkman"
-[[ -s "/Users/matt/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/matt/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/maxcoplan/.sdkman"
+[[ -s "/Users/maxcoplan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/maxcoplan/.sdkman/bin/sdkman-init.sh"
 #fi
 #unset __conda_setup
 # <<< conda initialize <<<

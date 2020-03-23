@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
 
   "Plug 'Raimondi/delimitMate'
 
-  Plug 'joshdick/onedark.vim'
+  "Plug 'joshdick/onedark.vim'
   Plug 'morhetz/gruvbox'
 
   Plug 'vim-airline/vim-airline'
@@ -48,6 +48,8 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'airblade/vim-gitgutter'
 
+  Plug 'luochen1990/rainbow'
+
   "Plug 'ycm-core/YouCompleteMe'
       autocmd! User youcompleteme.vim YCM()
   Plug 'neoclide/coc.nvim',  {'tag': '*', 'branch': 'release'}
@@ -73,7 +75,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/jsonc.vim'
   "Plug 'maxmellon/vim-jsx-pretty'
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'jonsmithers/vim-html-template-literals'
+  "Plug 'jonsmithers/vim-html-template-literals'
   "Plug 'pangloss/vim-javascript'
 
 
@@ -117,6 +119,7 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set colorcolumn=80
+set textwidth=80
 
 let g:camelcasemotion_key = '<leader>'
 
@@ -131,8 +134,8 @@ set relativenumber
 ""inoremap [ []<left>
 ""inoremap { {}<left>
 ""inoremap {<CR> {<CR>}<ESC>O
-""inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"noremap {;<CR> {<CR>};<ESC>O
 
+""inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"noremap {;<CR> {<CR>};<ESC>O
 nnoremap o o   <BS><Esc>:let @6=@*<CR><DEL>:let @*=@6<CR>
 nnoremap O O   <BS><Esc>:let @6=@*<CR><DEL>:let @*=@6<CR>
 
@@ -150,9 +153,10 @@ nmap <silent> t<C-g> :TestVisit<CR>
 let test#strategy = "vimux"
 
 
-set scrolloff=1
+set scrolloff=15
 set showbreak=↪
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+set cpoptions-=_
 
 set foldmethod=indent
 set foldlevelstart=18
@@ -175,7 +179,7 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 cmap w!! w !sudo tee > /dev/null %
 
 
-set updatetime=400
+set updatetime=100
 "Color config
 "let g:gruvbox_contrast_dark = 'hard'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -300,6 +304,8 @@ let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
 let g:gitgutter_sign_modified_removed = emoji#for('collision')
 set completefunc=emoji#complete
 
+let g:rainbow_active = 1
+
 autocmd FileType text set spell
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
@@ -315,13 +321,12 @@ au BufNewFile,BufRead *.py
 let python_highlight_all=1
 let g:python_highlight_all = 1
 "syntax on
-
-
 au BufRead,BufNewFile *rc.json set filetype=jsonc
 au BufRead,BufNewFile bash-fc-* set filetype=sh
 au BufRead,BufNewFile zsh* set filetype=zsh
 au BufRead,BufNewFile README,INSTALL,CREDITS set filetype=markdown
 au BufRead,BufRead * if &syntax == '' | set syntax=sh | endif
+au BufRead,BufNewFile *.json set syntax=jsonc
 
 "Formatting end
 
