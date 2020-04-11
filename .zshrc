@@ -49,13 +49,9 @@ plugins=(
   docker-compose
   docker-machine
   fzf
-<<<<<<< HEAD
   npm
-) 
-=======
   zsh-better-npm-completion
 )
->>>>>>> 86fee12842f852db7c654b8686f30cb4bd543863
 source $ZSH/oh-my-zsh.sh
 setopt vi
 autoload -U edit-command-line
@@ -133,6 +129,6 @@ end=`gdate +%s.%N`
 runtime=$( echo "$end - $start"|bc -l )
 echo "$runtime seconds"
 
- # added for npm-completion https://github.com/Jephuff/npm-bash-completion
-PATH_TO_NPM_COMPLETION="/Users/maxcoplan/workspace/Prom/node_modules/npm-completion"
-source $PATH_TO_NPM_COMPLETION/npm-completion.sh
+# # added for npm-completion https://github.com/Jephuff/npm-bash-completion
+#PATH_TO_NPM_COMPLETION="/Users/maxcoplan/workspace/Prom/node_modules/npm-completion"
+#source $PATH_TO_NPM_COMPLETION/npm-completion.sh
