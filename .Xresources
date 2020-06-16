@@ -39,7 +39,8 @@ URxvt.externalBorder:      0
 
 URxvt*fading:              30
 
-URxvt.perl-ext-common:     default,matcher,resize-font,fullscreen,clipboard
+URxvt.perl-ext-common:     default,matcher
+!,resize-font,fullscreen,clipboard
 
 URxvt.keysym.F11:          perl:fullscreen:switch
 

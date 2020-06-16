@@ -11,9 +11,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'edkolev/tmuxline.vim'
-    Plug 'tmux-plugins/vim-tmux'
-    Plug 'christoomey/vim-tmux-navigator'
-    
+    "Plug 'tmux-plugins/vim-tmux'
+    "Plug 'christoomey/vim-tmux-navigator'
+    Plug 'termhn/i3-vim-nav' 
+    "Plug 'fogine/vim-i3wm-tmux-navigator'
     " Vim HardTime
 "    Plug 'takac/vim-hardtime'
     
