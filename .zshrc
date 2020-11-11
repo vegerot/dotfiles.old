@@ -115,6 +115,8 @@ RPS1="${return_code}"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+eval "$(jump shell)"
+
 end=`date +%s.%N`
 runtime=$( echo "$end - $start"|bc -l )
 echo "$runtime seconds"
