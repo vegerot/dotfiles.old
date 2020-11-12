@@ -20,17 +20,15 @@ if exists('firstTime')+1 | call plug#begin('~/.vim/plugged')
 
   Plug 'benmills/vimux'
 
-  Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-
   Plug 'bkad/CamelCaseMotion'
-  "Plug 'easymotion/vim-easymotion'
+  Plug 'easymotion/vim-easymotion'
 
   Plug 'kana/vim-textobj-user'
   Plug 'fvictorio/vim-textobj-backticks'
 
   "Plug 'Raimondi/delimitMate'
 
-  Plug 'joshdick/onedark.vim'
+  "Plug 'joshdick/onedark.vim'
   Plug 'morhetz/gruvbox'
 
   Plug 'vim-airline/vim-airline'
@@ -44,7 +42,7 @@ if exists('firstTime')+1 | call plug#begin('~/.vim/plugged')
 
   Plug 'vim-test/vim-test'
 
-  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-emoji'
 
@@ -52,12 +50,12 @@ if exists('firstTime')+1 | call plug#begin('~/.vim/plugged')
 
   Plug 'preservim/nerdtree'
   "Plug 'ryanoasis/vim-devicons'
-  "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'Xuyuanp/nerdtree-git-plugin'
 
   "Plug 'airblade/vim-gitgutter'
 
-  "Plug 'luochen1990/rainbow'
+  Plug 'luochen1990/rainbow'
 
   " Vim HardTime
   "Plug 'phux/vim-hardtime'
@@ -92,11 +90,11 @@ if exists('firstTime')+1 | call plug#begin('~/.vim/plugged')
   "Plug 'pangloss/vim-javascript'
 
 
-  "Plug 'nvie/vim-flake8'
-  "Plug 'Vimjas/vim-python-pep8-indent'
+  " Plug 'nvie/vim-flake8'
+  " Plug 'Vimjas/vim-python-pep8-indent'
   "Plug 'jupyter-vim/jupyter-vim', {'for': ['python'] }
-  "Plug 'vim-python/python-syntax'
-  "Plug 'ehamberg/vim-cute-python', {'for': ['python']}
+  Plug 'vim-python/python-syntax'
+  Plug 'ehamberg/vim-cute-python'
 
   Plug 'google/vim-maktaba'
   Plug 'google/vim-codefmt'
@@ -118,7 +116,7 @@ let g:netrw_liststyle=3
 let g:netrw_banner = 0
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-set rtp+=/usr/local/opt/fzf
+set mouse=a
 " Enable per-command history
 " - History files will be stored in the specified directory
 " - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
@@ -129,7 +127,6 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 "Search stuff
 set incsearch
 set hlsearch
-set ignorecase 
 set smartcase 
 nnoremap n nzz
 nnoremap N Nzz
@@ -168,8 +165,6 @@ set relativenumber
 
 nnoremap gF :wincmd f <CR>
 
-nmap <c-s-K> :execute &keywordprg expand("<cword>")<cr>
-
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 nmap t<C-n> :TestNearest<CR>
 nmap t<C-f> :TestFile<CR>
@@ -199,9 +194,9 @@ set foldmethod=indent
 set foldlevelstart=18
 "Cursor Mode stuff
 
-let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+"let &t_SI.="\e[5 q" "SI = INSERT mode
+"let &t_SR.="\e[4 q" "SR = REPLACE mode
+"let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 "Cursor settings:
 
@@ -222,13 +217,14 @@ set updatetime=1000
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " set termguicolors
 "let g:onedark_hide_endofbuffer=1
-let g:onedark_terminal_italics=1
+"let g:onedark_terminal_italics=1
 "let g:onedark_termcolors=256
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="soft"
 let g:gruvbox_italicize_strings=1
 let g:gruvbox_improved_strings=1
 colorscheme gruvbox
+set background=dark
 highlight NonText guifg=grey
 highlight Comment gui=italic guifg=grey
 "highlight Normal ctermfg=7 ctermbg=0 guibg=black guifg=white
@@ -295,6 +291,7 @@ function! YCM()
   let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
   nmap <c-]> :YcmCompleter GoTo<CR>
 endfunction
+
 "coc
 function! CocStart()
   so ~/.cocrc.vim
@@ -343,7 +340,7 @@ autocmd Filetype html,css,sass,scss,less,json,javascript,typescript,vue set auto
 autocmd Filetype html,css,sass,scss,less,json,javascript,typescript,vue set autowriteall
 set autowrite
 set autowriteall
- 
+
 au BufEnter git*.c*_*.txt set filetype=markdown
 
 "#call jspretmpl#register_tag('javascript', 'javascriptreact')
@@ -354,10 +351,10 @@ let g:vim_jsx_pretty_template_tags=['jsx','tsx', 'javascriptreact', 'typescriptr
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
-"let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
-"let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
-"let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
-"let g:gitgutter_sign_modified_removed = emoji#for('collision')
+let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+let g:gitgutter_sign_modified_removed = emoji#for('collision')
 set completefunc=emoji#complete
 
 let g:rainbow_active = 1
@@ -435,6 +432,7 @@ set mouse=a
 
 let g:airline_stl_path_style = 'short'
 let g:airline_extensions = []
+
 
 set title
 set clipboard=unnamed,unnamedplus

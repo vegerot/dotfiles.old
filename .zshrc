@@ -1,10 +1,12 @@
 start=`gdate +%s.%N`
-#
-## If you come from bash you might have to change your $PATH.
+
+# If you come from bash you might have to change your $PATH.
 ##Open Tmux
 source ~/.profile
 #~/bin/cowCommand.sh
 source ~/.paths.sh
+~/bin/cowCommand.sh
+export PATH="$PATH:."
 #
 ## Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -16,16 +18,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 #
-fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh-completions/conda-zsh-completion $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
 #setopt LOCAL_OPTIONS NO_NOTIFY
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 autoload -U promptinit && promptinit
 autoload -Uz run-help
-# autoload -Uz run-help-git
-# autoload -Uz run-help-svn
-# autoload -Uz run-help-svk
-unalias run-help
+autoload -Uz run-help-git
+autoload -Uz run-help-svn
+autoload -Uz run-help-svk
+unalias run-help 2>/dev/null
 alias help=run-help
 #
 ##source /usr/local/share/zsh-completions/helpers
@@ -35,13 +37,13 @@ alias help=run-help
 #  eval "$(brew command-not-found-init)"
 #fi
 plugins=(
-  git
   osx
+  brew
   colored-man-pages
+  git
   colorize
   pip
   python
-  brew
   vi-mode
   zsh-syntax-highlighting
   history-substring-search
@@ -57,11 +59,11 @@ setopt vi
 autoload -U edit-command-line
 zle -N edit-command-line
 ## 10ms for key sequences
-#KEYTIMEOUT=1
+KEYTIMEOUT=1
 bindkey -M vicmd "" edit-command-line
-#
+
 precmd_functions+=(zle-keymap-select)
-#
+
 zle-keymap-select () {
     if [[ $KEYMAP == vicmd ]]; then
         # the command mode for vi
@@ -71,7 +73,7 @@ zle-keymap-select () {
         echo -ne "\e[5 q"
     fi
 }
-#  
+
 # Bind j and k for in vim mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
@@ -92,20 +94,17 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 source "$HOME/.fzf-extras/fzf-extras.zsh"
 source "$HOME/.fzf-extras/fzf-extras.sh"
-. /usr/local/etc/profile.d/autojump.sh
 
-#
+
 mkcdir ()
 {
 	mkdir -p -- "$1" &&
 		cd -P -- "$1"
 }
-#
-##Aliases
+
+#Aliases
 source ~/.aliases
 source ~/.functions
-alias pman='man-preview'
-alias ls="gls --group-directories-first --color=tty -XhF"
 #
 ##ZSH-SYTAX-HIGHLIGHTING
 ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=white
@@ -119,16 +118,18 @@ RPS1="${return_code}"
 eval "$(gh completion -s zsh)"
 source ~/.iterm2_shell_integration.zsh
 #
-eval "$(jenv init -)"
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# eval "$(jenv init -)"
+#   export NVM_DIR="$HOME/.nvm"
+#   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 #
 ## >>> conda initialize >>>
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
+        # . "/usr/local/anaconda3/etc/profile.d/conda.sh"
 #
 ## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(jump shell)"
 
 end=`gdate +%s.%N`
 runtime=$( echo "$end - $start"|bc -l )
