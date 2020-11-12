@@ -41,7 +41,7 @@ if exists('firstTime')+1 | call plug#begin('~/.vim/plugged')
 
   Plug 'vim-test/vim-test'
 
-  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-emoji'
 
@@ -113,7 +113,6 @@ let g:netrw_liststyle=3
 let g:netrw_banner = 0
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-set rtp+=/usr/local/opt/fzf
 set mouse=a
 " Enable per-command history
 " - History files will be stored in the specified directory
