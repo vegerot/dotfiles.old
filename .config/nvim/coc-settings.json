@@ -61,8 +61,8 @@
    "java.home": "/Library/Java/JavaVirtualMachines/openjdk-13.0.0.jdk/Contents/Home",
    "coc.preferences.formatOnType": true,
    "coc.preferences.formatOnSaveFiletypes": [
-      "javascript",
-      "js",
+      /* "javascript", */
+      /* "js", */
       "html",
       "Markdown",
       "css",
@@ -113,6 +113,7 @@
     "bkad",
     "blns",
     "btns",
+    "bufferutil",
     "bufnr",
     "camelcase",
     "christoomey",
@@ -130,6 +131,7 @@
     "firenvim",
     "fvictorio",
     "gitlab",
+    "gitmoji",
     "glacambre",
     "gruvbox",
     "highlightedyank",
@@ -145,6 +147,7 @@
     "krid",
     "lcov",
     "leafoftree",
+    "libphonenumber",
     "liuchengxu",
     "llvm",
     "luochen",
@@ -171,6 +174,7 @@
     "proto",
     "qflist",
     "readonly",
+    "requestidlecallback",
     "rerender",
     "sheerun",
     "shumphrey",
