@@ -5,7 +5,7 @@ start=`gdate +%s.%N`
 source ~/.profile
 #~/bin/cowCommand.sh
 source ~/.paths.sh
-~/bin/cowCommand.sh
+# ~/bin/cowCommand.sh
 export PATH="$PATH:."
 #
 ## Path to your oh-my-zsh installation.
@@ -14,10 +14,10 @@ export ZSH="$HOME/.oh-my-zsh"
 ## ZSH_THEME="MaxCoplanTheme"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 #
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-#
+ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+ fi
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 #setopt LOCAL_OPTIONS NO_NOTIFY
 autoload -U +X compinit && compinit
