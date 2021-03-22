@@ -58,7 +58,7 @@
       /*   } */
       /* } */
    },
-   "java.home": "/Library/Java/JavaVirtualMachines/openjdk-13.0.0.jdk/Contents/Home",
+   "java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home",
    "coc.preferences.formatOnType": true,
    "coc.preferences.formatOnSaveFiletypes": [
       /* "javascript", */
@@ -86,6 +86,7 @@
     "Coplan",
     "DGRAM",
     "Darkholme",
+    "Deno",
     "Glazar",
     "INET",
     "IPPROTO",
@@ -216,6 +217,7 @@
     "tabnine.priority": 69,
     "tsserver.execArgv": ["--nolazy", "--inspect-brk"],
     "tsserver.trace.server": "verbose",
-     
-     
+    "python.jediEnabled": false,
+    "python.autoComplete.extraPaths":["./",
+      "/Users/maxcoplan/workspace/build/RADD/secrel-pipeline-v2/scripts/"]
 }
