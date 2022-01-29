@@ -70,7 +70,7 @@ nmap <leader>u :UndotreeShow<CR>
 lua require('treesitterConfig')
 
 "" Autocomplete
-lua require('coqConfig')
+"lua require('coqConfig')
 
 " LSP
 lua require('lspconfigConfig')

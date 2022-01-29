@@ -1,5 +1,5 @@
 # Compute how long startup takes
-start=`gdate +%s.%N`
+start=`date +%s.%N`
 
 #start Tmux, maybe
 source ~/.profile
@@ -55,8 +55,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
 	# line editing
 	vi-mode
-	zsh-syntax-highlighting
-	zsh-autosuggestions
+	fast-syntax-highlighting
 	history-substring-search
 	fzf
 
@@ -109,12 +108,10 @@ bindkey -M vicmd 'j' history-substring-search-down
 ## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source "${HOME}/.iterm2_shell_integration.zsh"
-
-
 autoload -Uz compinit && compinit
+cowCommand&
 
 # Compute time taken
-end=`gdate +%s.%N`
+end=`date +%s.%N`
 runtime=$( echo "$end - $start"|bc -l )
 echo "$runtime seconds"
