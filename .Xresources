@@ -1,10 +1,10 @@
-URxvt.font: xft:MesloLGS NF:site=12
+URxvt.font: xft:JetBrainsMono Nerd Font Mono:pixelsize=16
 URxvt.scrollBar: false
 Xcursor.theme: DMZ-White
 
-URxvt.boldFont:            xft:MesloLGS NF:pixelsize=16:bold
-URxvt.italicFont:          xft:MesloLGS NF:pixelsize=16:italic
-URxvt.boldItalicFont:      xft:MesloLGS NF:pixelsize=16:bold:italic
+URxvt.boldFont:            xft:JetBrainsMono Nerd Font Mono:pixelsize=16:bold
+URxvt.italicFont:          xft:JetBrainsMono Nerd Font Mono:pixelsize=16:italic
+URxvt.boldItalicFont:      xft:JetBrainsMono Nerd Font Mono:pixelsize=16:bold:italic
 URxvt.letterSpace:         -1
 
 *background: #232C31
@@ -58,7 +58,7 @@ URxvt.colorUL:             #7780a1
 URxvt.depth:32
 URxvt.transparent:  true
 URxvt*highlightSelection: true
-URxvt*background: [40]#232C31
+URxvt*background: [75]#232C31
 URxvt*geometry: 100x30
 URxvt*shading: 50
 URxvt*tintColor: #666666
