@@ -87,6 +87,9 @@ bindkey '^p' fzf-file-widget
 source ~/.env
 source ~/.aliases
 source ~/.sh_functions
+set +m
+cowCommand &
+set -m
 
 # change cursor shape in vi mode
 precmd_functions+=(zle-keymap-select)
@@ -109,7 +112,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 autoload -Uz compinit && compinit
-cowCommand&
 
 # Compute time taken
 end=`date +%s.%N`
