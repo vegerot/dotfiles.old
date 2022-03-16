@@ -1,4 +1,4 @@
-# Vegerot's dotfiles
+# Vegerot's dotfiless
 
 ## Installation
 
