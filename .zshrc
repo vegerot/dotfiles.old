@@ -71,6 +71,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# set up keymap stuff here because it's not working other places
+xmodmap ~/.Xmodmap
+xcape
+setxkbmap -option ctrl:nocaps
+xcape -e 'Control_L=Escape'
+
 eval "$(jump shell)"
 
 # fzf
