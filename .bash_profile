@@ -22,7 +22,7 @@ __prompt_command()
         PS1+="${Blue}\u${Rcol}"
     fi
     #PS1+="\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\n\$ "
-    PS1+="\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\033[35m$(__git_ps1)\033[m \n\$ "	
+    PS1+="\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\033[35m$(__git_ps1)\033[m \n\$ "
 
 }
 
@@ -101,7 +101,7 @@ test -r $d && eval "$(dircolors $d)"
 #    eval "$__conda_setup"
 #else
 if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-    . "/usr/local/anaconda3/etc/profile.d/conda.sh" 
+    . "/usr/local/anaconda3/etc/profile.d/conda.sh"
 else
     export PATH="/usr/local/anaconda3/bin:$PATH"
 fi
