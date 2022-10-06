@@ -12,8 +12,7 @@ d
 
 When setting up a new Mac, you may want to set some sensible macOS defaultas:asdf
 gd
-```bashaa
-./.macos
+```bashaaasdf
 ```
 d
 ### Install Homebrew formulaeaaa
