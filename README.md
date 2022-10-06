@@ -15,7 +15,7 @@ gd
 ```bashaa
 ./.macos
 ```
-
+d
 ### Install Homebrew formulaeaaa
 
 When setting up a new Mac, you may want to install some common [Homebrew](https://brew.sh/) formulae (after installing Homebrew, of course):
