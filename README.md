@@ -12,7 +12,7 @@ You can clone the repository wherever you want. (I like to keep it in `~/Project
 
 When setting up a new Mac, you may want to set some sensible macOS defaults:
 g
-```basha
+```bashaa
 ./.macos
 ```
 
