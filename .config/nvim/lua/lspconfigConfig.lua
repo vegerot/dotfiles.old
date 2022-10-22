@@ -50,3 +50,17 @@ for _, lsp in ipairs(servers) do
     }
   })
 end
+-- run an additional script to add Cmds for sqls
+-- make it look at close as possible to the previous loop for convenience
+local sqlsServer = { 'sqls' }
+for _, lsp in ipairs(sqlsServer) do
+  nvim_lsp[lsp].setup (coq.lsp_ensure_capabilities {
+    on_attach = function(client, bufnr)
+      on_attach(client, bufnr)
+      require('sqls').on_attach(client, bufnr)
+    end,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  })
+end

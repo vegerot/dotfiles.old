@@ -34,6 +34,8 @@ call plug#begin(stdpath('data') . '/plugged')
 
   Plug 'ray-x/go.nvim'
 
+  Plug 'nanotee/sqls.nvim'
+
   Plug 'github/copilot.vim'
 call plug#end()
 
