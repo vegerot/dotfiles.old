@@ -2,13 +2,6 @@
 
 ## important stuff goes first
 export PATH="$HOME/.cargo/bin:$PATH"
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-# Walmart iOS dev stuff
-export PATH=$HOME/.mint/bin:$PATH
-
-
 
 ## Unimportant stuff goes at the end
 export GOPATH="$HOME/go"
@@ -36,13 +29,7 @@ export PATH="$PATH:."
 
 export MANPATH="/usr/local/share/man:$MANPATH:"
 
-# pnpm
-export PNPM_HOME="/Users/m0c0j7y/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end# setup pyenv
+# setup pyenv
 
 #if command -v pyenv 1>/dev/null 2>&1; then
 if false; then
