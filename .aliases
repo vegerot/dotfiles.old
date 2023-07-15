@@ -2,7 +2,7 @@
 
 # basics
 
-alias ls="ls -G"
+alias ls="ls --color"
 
 # vim
 #alias vi=nvim
