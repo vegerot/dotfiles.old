@@ -14,6 +14,13 @@ export PATH=$HOME/.mint/bin:$PATH
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/lib:$GOPATH/bin:$HOME/dotfiles/bin"
 
+# pnpm
+export PNPM_HOME="/home/max/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 # sledge:binary path
 #export SLEDGE_BIN="$HOME/.sledge/bin"
 #export PATH="${PATH}:${SLEDGE_BIN}"
