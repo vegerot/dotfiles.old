@@ -84,10 +84,20 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # set up keymap stuff here because it's not working other places
-xmodmap ~/.Xmodmap
-xcape
-setxkbmap -option ctrl:nocaps
-xcape -e 'Control_L=Escape'
+keymaps() {
+	local is_caps_already_mapped=$(xmodmap -pke | rg --count-matches "keycode\s+66\s*=\s*Control_L")
+	if [[ $is_caps_already_mapped -gt 0 ]]; then
+		return
+	fi
+	echo $is_caps_already_mapped
+	echo "Caps is not mapped to Control_L, mapping it now"
+	echo "caps is currently mapped to: $(xmodmap -pke | rg "keycode\s+66\s*= ")"
+	xmodmap ~/.Xmodmap
+	xcape
+	setxkbmap -option ctrl:nocaps
+	xcape -e 'Control_L=Escape'
+}
+keymaps
 
 eval "$(jump shell)"
 
