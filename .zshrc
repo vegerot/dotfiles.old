@@ -1,7 +1,7 @@
 # add things to shell environment
 source ~/.env
 # Compute how long startup takes
-start=`gdate +%s.%N`
+start=`date +%s.%N`
 
 # remove duplicates from PATH
 typeset -aU path
@@ -68,7 +68,6 @@ plugins=(
 	# line editing
 	vi-mode
 	fast-syntax-highlighting
-	zsh-autosuggestions
 	history-substring-search
 	fzf
 
@@ -76,7 +75,6 @@ plugins=(
 	git
 	npm
 	zsh-better-npm-completion
-	yarn-autocompletions
 
 	colored-man-pages
 )
@@ -84,6 +82,12 @@ source $ZSH/oh-my-zsh.sh
 
 
 # User configuration
+
+# set up keymap stuff here because it's not working other places
+xmodmap ~/.Xmodmap
+xcape
+setxkbmap -option ctrl:nocaps
+xcape -e 'Control_L=Escape'
 
 eval "$(jump shell)"
 
@@ -97,7 +101,7 @@ export FZF_PREVIEW_OPTS='--preview "bat --color always {} || cat {}" --preview-w
 export FZF_CTRL_T_OPTS=$FZF_PREVIEW_OPTS
 
 source "$HOME/.fzf-extras/fzf-extras.zsh"
-#source "$HOME/.fzf-extras/fzf-extras.sh"
+source "$HOME/.fzf-extras/fzf-extras.sh"
 
 # from fzf.zsh plugin
 bindkey '^p' fzf-file-widget
@@ -129,9 +133,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 ## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source "${HOME}/.iterm2_shell_integration.zsh"
-
-
 ## Only check compinit once a day
 ## credit: https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
 autoload -Uz compinit
@@ -141,6 +142,6 @@ done
 compinit -C
 
 # Compute time taken
-end=`gdate +%s.%N`
+end=`date +%s.%N`
 runtime=$( echo "$end - $start"|bc -l )
 echo "$runtime seconds"
