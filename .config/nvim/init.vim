@@ -10,6 +10,8 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-unimpaired'
 
+  Plug 'vegerot/open-remote'
+
   "" Simple plugins
   " Copy link to Git{Lab,Hub{,Enterprise}}
   Plug 'ruanyl/vim-gh-line'
