@@ -85,6 +85,9 @@ source $ZSH/oh-my-zsh.sh
 
 # set up keymap stuff here because it's not working other places
 keymaps() {
+	if [[ -z $DISPLAY ]]; then
+		return
+	fi
 	local is_caps_already_mapped=$(xmodmap -pke | rg --count-matches "keycode\s+66\s*=\s*Control_L")
 	if [[ $is_caps_already_mapped -gt 0 ]]; then
 		return
@@ -155,3 +158,4 @@ compinit -C
 end=`date +%s.%N`
 runtime=$( echo "$end - $start"|bc -l )
 echo "$runtime seconds"
+
