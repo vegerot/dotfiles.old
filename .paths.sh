@@ -4,6 +4,8 @@
 export PATH="$HOME/.cargo/bin:$PATH"
 
 ## Unimportant stuff goes at the end
+export DENO_INSTALL="/home/max/.deno"
+export PATH="$PATH:$DENO_INSTALL/bin"
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/lib:$GOPATH/bin:$HOME/dotfiles/bin"
 
@@ -38,3 +40,11 @@ if false; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
+
+
+# bun completions
+[ -s "/home/max/.bun/_bun" ] && source "/home/max/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
