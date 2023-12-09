@@ -43,7 +43,7 @@ fi
 
 
 # bun completions
-[ -s "/home/max/.bun/_bun" ] && source "/home/max/.bun/_bun"
+[ -s "/home/max/.bun/_bun" ] && [ "$SHELL" = "zsh" ] && source "/home/max/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
