@@ -122,9 +122,7 @@ bindkey '^p' fzf-file-widget
 # add more things to shell environment
 source ~/.aliases
 source ~/.sh_functions
-set +m
-cowCommand &
-set -m
+randomcommand
 
 # change cursor shape in vi mode
 precmd_functions+=(zle-keymap-select)
